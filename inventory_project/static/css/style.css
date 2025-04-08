@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    font-size: 3rem;
+}
+
+nav {
+    padding: 1rem;
+    background-color: mediumblue;
+    color: whitesmoke;
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    gap: 1 rem;
+}
+
+h1,
+h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: ghostwhite;
+}
+
+a {
+    color: #90caf9;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #bbdefb
+}
+
+.form-with-validation {
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1rem;
+}
+
+.form-with-validation input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    max-width: 350px;
+    background-color: black;
+    color: white;
+
+}
+
+.form-submit {
+    padding: 0.6rem;
+    border-radius: 8px;
+    background-color: green;
+    color: white;
+    border: white;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background-color: green;
+}
+
+.errorlist {
+    color: red;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.errorlist li::marker {
+    content: '  ⚠️  ';
+}
+
+.logout {
+    display: inline-block;
+}
+
+.logout-button {
+    font-size: 2rem;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: grey;
+}

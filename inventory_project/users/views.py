@@ -25,11 +25,10 @@ def auth_receiver(request):
     except ValueError:
         return HttpResponse(status=403)
 
-    # In a real app, I'd also save any new user here to the database.
-    # You could also authenticate the user here using the details from Google (https://docs.djangoproject.com/en/4.2/topics/auth/default/#how-to-log-a-user-in)
     request.session['user_data'] = user_data
+    request.session['cached_picture'] = user_data.get('picture', '')
 
-    return redirect('users:login')
+    return redirect('dashboard')
 
 def sign_out(request):
     del request.session['user_data']

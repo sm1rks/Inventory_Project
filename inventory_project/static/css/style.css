@@ -109,7 +109,95 @@ a:hover {
     background-color: grey;
 }
 
-.google-btn {
-    max-width:300px;
-    width: 100%;
+nav {
+    padding: 10px 20px; /* Space inside the nav bar */
+    background-color: #333; /* Dark background for the nav */
+    height: 72px; /* Set a height for the nav bar */
+  }
+
+.topnav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between avatar and sign out link */
+    float: right;
 }
+
+.topnav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between avatar and sign out link */
+    float: left;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* makes it a circle */
+    object-fit: cover;
+    border: 1px solid #ccc; /* optional, for style */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    text-align: center;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .google-login {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+  }
+  
+  .google-login p {
+    margin-bottom: 20px;  /* Adds space between the text and button */
+  }
+  
+  .google-btn {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    width: 100%;  /* Ensures the button doesn't stretch too wide */
+    max-width: 300px;  /* Optional: set max width for the button */
+  }
+
+  .nav-btn {
+    background-color: #ffffff; /* Google's red color for the button */
+    color: rgb(0, 0, 0);
+    text-decoration: none; /* Remove underline from the link */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block; /* Makes sure it behaves like a button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  /* Hover Effect */
+  .nav-btn:hover {
+    background-color: #f0cf3c; /* Darker red when hovered */
+    color: rgb(0, 0, 0);
+    transform: scale(1.05); /* Slight zoom-in effect */
+  }
+  
+  /* Optional: Add an icon to the button */
+  .nav-btn i {
+    margin-right: 8px; /* Space between the icon and text */
+  }

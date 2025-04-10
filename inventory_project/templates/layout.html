@@ -14,9 +14,18 @@
 </head>
 <body>
     <nav>
-        <a href="/">Dashboard</a> |
-        <a href="{% url 'users:login'%}">Login</a> |
-        <a href="{% url 'inventory:store'%}">Store Inventory</a> |
+        {% if request.session.user_data %}
+            <div class="topnav-left">
+                <a href="/" class="nav-btn">Dashboard</a> |
+                <a href="{% url 'inventory:store' %}" class="nav-btn">Store Inventory</a> |
+            </div>
+            <div class="topnav-right">
+                <a href="{% url 'users:sign_out' %}" class="nav-btn">Sign Out</a> |
+                <img class="user-avatar" src="{{ request.session.cached_picture }}" alt="User picture"
+                     onerror="this.onerror=null; this.src='{% static 'img/default-avatar.png' %}'" />
+            </div>
+        {% else %}
+        {% endif %}
     </nav>
     <main>
         {% block content %}

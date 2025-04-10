@@ -40,9 +40,6 @@ media/
 dist/
 build/
 
-# Django secret key (not to be tracked)
-*.env
-
 # SQLite database file (if using SQLite)
 *.sqlite3
 
@@ -68,10 +65,6 @@ coverage.xml
 docker-compose.yml
 Dockerfile
 .docker/
-
-# Example environment files
-.env
-*.env
 
 # Files created by the Django test server
 *.log

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User login
+{% endblock %}
+
+{% block content %}
+<div class="login-page-container">
+  <div class="login-container">
+    {% if request.session.user_data %}
+    <div>
+      <p>How did you get here?</p>
+    </div>
+    {% else %}
+    <div class="title">
+      <h1>Inventory Manager</h1>
+    </div>
+    <div class="google-login">
+      <div id="g_id_onload"
+          data-client_id="282633199150-c41bv8f7piu9sodcu6675mae18gqha67.apps.googleusercontent.com"
+          data-context="signin"
+          data-ux_mode="popup"
+          data-login_uri="http://localhost:8000/login/auth-receiver"
+          data-auto_prompt="false">
+      </div>
+
+      <div class="g_id_signin google-btn"
+          data-type="standard"
+          data-shape="rectangular"
+          data-theme="outline"
+          data-text="signin_with"
+          data-size="large"
+          data-logo_alignment="left">
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<script src="https://accounts.google.com/gsi/client" async></script>
+{% endblock %}

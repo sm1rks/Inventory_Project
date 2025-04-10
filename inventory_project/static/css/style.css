@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    font-size: 3rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    gap: 1 rem;
+}
+
+h1, h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: ghostwhite;
+}
+
+a {
+    color: #90caf9;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #bbdefb;
+}
+
+/* Form with validation styles */
+.form-with-validation {
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1rem;
+}
+
+.form-with-validation input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    max-width: 350px;
+    background-color: black;
+    color: white;
+}
+
+.form-submit {
+    padding: 0.6rem;
+    border-radius: 8px;
+    background-color: green;
+    color: white;
+    border: white;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background-color: green;
+}
+
+/* Error list styles */
+.errorlist {
+    color: red;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.errorlist li::marker {
+    content: ' ⚠️ ';
+}
+
+/* Navigation bar styles */
+nav {
+    font-size: 2.5rem;
+    padding: 10px 20px;
+    background-color: #333;
+    height: 65px;
+    display: flex;
+    justify-content: space-between; /* Ensure space between left and right parts */
+    align-items: center; /* Center the items vertically */
+}
+
+.nav-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.nav-btn:hover {
+    background-color: #f0cf3c;
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+}
+
+.nav-btn i {
+    margin-right: 8px;
+}
+
+.topnav-right, .topnav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateY(-4px);
+}
+
+.topnav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.topnav-left {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-top: 8px;
+}
+
+/* Container styles */
+.login-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    text-align: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Google login styles */
+.google-login {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-login p {
+    margin-bottom: 20px;
+}
+
+.google-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+}

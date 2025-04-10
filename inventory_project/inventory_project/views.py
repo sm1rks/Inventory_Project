@@ -1,9 +1,10 @@
+from .decorators import google_login_required
 from django.shortcuts import render
 
-def homepage(request):
-    # return HttpResponse("Hello World! I'm Home.")
-    return render(request, 'home.html')
+@google_login_required(login_url='/login/')
+def dashboard(request):
+    return render(request, 'dashboard.html')
 
+@google_login_required(login_url='/login/')
 def about(request):
-    # return HttpResponse("My About page.")
     return render(request, 'about.html')

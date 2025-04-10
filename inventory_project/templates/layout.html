@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}
-            Django App
+            Django app
         {% endblock %}
     </title>
     <script src="{% static 'js/main.js' %}" defer></script>
@@ -14,8 +14,17 @@
 </head>
 <body>
     <nav>
-        <a href="/">Home</a> |
-        <a href="/about">About</a> |
+        {% if request.session.user_data %}
+            <div class="topnav-left">
+                <a href="/" class="nav-btn">Dashboard</a> |
+                <a href="{% url 'inventory:store' %}" class="nav-btn">Store Inventory</a> |
+            </div>
+            <div class="topnav-right">
+                <a href="{% url 'users:sign_out' %}" class="nav-btn">Sign Out</a> |
+                <img class="user-avatar" src="{{ request.session.cached_picture }}" alt="User picture"/>
+            </div>
+        {% else %}
+        {% endif %}
     </nav>
     <main>
         {% block content %}

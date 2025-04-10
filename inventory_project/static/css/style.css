@@ -108,3 +108,8 @@ a:hover {
 .logout-button:hover {
     background-color: grey;
 }
+
+.google-btn {
+    max-width:300px;
+    width: 100%;
+}

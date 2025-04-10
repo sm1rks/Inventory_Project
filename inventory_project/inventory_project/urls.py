@@ -26,4 +26,5 @@ urlpatterns = [
     path('', views.dashboard),
     path('inventory/', include('inventory.urls')),
     path('users/', include('users.urls')),
+    path('auth-receiver', include('users.urls')),
 ]

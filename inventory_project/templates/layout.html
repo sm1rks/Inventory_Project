@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}
-            Django App
+            Store Inventory
         {% endblock %}
     </title>
     <script src="{% static 'js/main.js' %}" defer></script>
@@ -16,9 +16,30 @@
     <nav>
         <a href="/">Dashboard</a> |
         <a href="{% url 'users:login'%}">Login</a> |
+        <a href="{% url 'inventory:store' %}">Store Inventory</a> |
     </nav>
     <main>
         {% block content %}
+        <form method="get" action"{% url 'Inventory:store' %}">
+        <label for="store">Select Store</label>
+        <select name="store_id" id="store">
+            {% for store in stores %}
+            <option value="{{ store.id }}" {% if store == selected_store %}selected{% endif %}>{{ store.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit"> View inventory </button>
+    </form>
+
+        {% if selected_store %}
+        <h2>Inventory for {{ selected_store.name }}:</h2>
+        <ul>
+            {% for item in inventory_items %}
+            <li>{{ item.itemName }} - {{ item.quantity }} </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Please select a store to the view the inventory.</p>
+        {% endif %}
         {% endblock %}
     </main>
 </body>

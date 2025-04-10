@@ -26,7 +26,7 @@
             <label for="store"></label>
             <select name="stores" id="store">
                 {% for store in stores %}
-                    <option value="{{ storeID }}" {% if store == selected_store %}selected{% endif %}>{{ store.name }}</option>
+                    <option value="{{ store.storeID }}" {% if store == selected_store %}selected{% endif %}>{{ store.name }}</option>
                 {% empty %}
                     <option>No stores available.</option>
                 {% endfor %}

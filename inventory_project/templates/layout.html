@@ -21,8 +21,7 @@
             </div>
             <div class="topnav-right">
                 <a href="{% url 'users:sign_out' %}" class="nav-btn">Sign Out</a> |
-                <img class="user-avatar" src="{{ request.session.cached_picture }}" alt="User picture"
-                     onerror="this.onerror=null; this.src='{% static 'img/default-avatar.png' %}'" />
+                <img class="user-avatar" src="{{ request.session.cached_picture }}" alt="User picture"/>
             </div>
         {% else %}
         {% endif %}

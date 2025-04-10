@@ -26,4 +26,5 @@ urlpatterns = [
     path('', views.dashboard, name='dashboard'),
     path('inventory/', include('inventory.urls')),
     path('login/', include('users.urls')),
+    path('shipments/', include('shipments.urls')),
 ]

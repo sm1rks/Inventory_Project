@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Store Shipments
+{% endblock %}
+
+{% block content %}
+    <h2>Select a Store</h2>
+    <form method="get" action="{% url 'shipments:storeShipments' %}">
+        <label for="store"></label>
+        <select name="store" id="store" onchange="this.form.submit()">
+            <option value="">-- Select a store --</option>
+            {% for store in stores %}
+                <option value="{{ store.storeID }}" {% if store.storeID == selected_store_id %}selected{% endif %}>
+                    {{ store.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+
+    {% if selected_store_id %}
+        <h3>Shipments for Store ID {{ selected_store_id }}:</h3>
+        {% if shipments %}
+            <ul>
+                {% for shipment in shipments %}
+                    <li>
+                        Item ID: {{ shipment.item.itemID }} |
+                        Quantity: {{ shipment.quantityShipped }} |
+                        Status: {{ shipment.status }} |
+                        Arrival: {{ shipment.expectedArrival }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No shipments found for this store.</p>
+        {% endif %}
+    {% else %}
+        <p>Please select a store to view its shipments.</p>
+    {% endif %}
+{% endblock %}

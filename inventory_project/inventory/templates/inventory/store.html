@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block content %}
+<div class="inventory-container">
     <h2>Select a Store</h2>
-    <form method="get" action="{% url 'inventory:store' %}">
-        <label for="store"></label>
+    <form method="get" action="{% url 'inventory:store' %}" class="inventory-header">
         <select name="stores" id="store">
             {% for store in stores %}
-                <option value="{{ storeID }}" {% if store == selected_store %}selected{% endif %}>{{ store.name }}</option>
+                <option value="{{ store.storeID }}" {% if store == selected_store %}selected{% endif %}>{{ store.name }}</option>
             {% empty %}
                 <option>No stores available.</option>
             {% endfor %}
@@ -19,15 +19,27 @@
     </form>
 
     {% if selected_store %}
-        <h3>Inventory for {{ selected_store.name }}:</h3>
-        <ul>
+        <h3>Inventory for {{ selected_store.name }}</h3>
+        <ul class="inventory-list">
             {% for item in inventory_items %}
-                <li>{{ item.itemName }} - {{ item.quantity }}</li>
+                <li>
+                    <span>{{ item.itemName }} - {{ item.quantity }}</span>
+                    <a href="{% url 'inventory:edit_item' item.itemID %}" class="edit-btn">Edit</a>
+                    <a href="{% url 'inventory:delete_item' item.itemID %}" class="delete-btn">Delete</a>
+                </li>
             {% empty %}
                 <li>No inventory items available for this store.</li>
             {% endfor %}
         </ul>
+
+        <h3>Add Inventory</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Item</button>
+        </form>
     {% else %}
         <p>Please select a store to view the inventory.</p>
     {% endif %}
+</div>
 {% endblock %}

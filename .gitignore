@@ -1,0 +1,7 @@
+inventory_project/inventory_project/.env
+
+# Ignore SQLite database
+inventory_project/db.sqlite3
+
+# Ignore compiled Python bytecode files
+inventory_project/inventory_project/__pycache__/

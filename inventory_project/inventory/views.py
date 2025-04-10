@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Store, Inventory
 
 
-@google_login_required(login_url='/users/')
+@google_login_required(login_url='/login/')
 def inventory(request):
     stores = Store.objects.all()
     store_id = request.GET.get('stores')

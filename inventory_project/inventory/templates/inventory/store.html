@@ -1,40 +1,24 @@
+{% extends 'layout.html' %}
 
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}
-            Store Inventory
-        {% endblock %}
-    </title>
-    <script src="{% static 'js/main.js' %}" defer></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <nav>
-        <a href="/">Dashboard</a> |
-        <a href="{% url 'users:login'%}">Login</a> |
-        <a href="{% url 'inventory:store' %}">Store Inventory</a> |
-    </nav>
-    <main>
-        {% block content %}
-        <h2>Select a Store</h2>
-        <form method="get" action="{% url 'inventory:store' %}">
-            <label for="store"></label>
-            <select name="stores" id="store">
-                {% for store in stores %}
-                    <option value="{{ store.storeID }}" {% if store == selected_store %}selected{% endif %}>{{ store.name }}</option>
-                {% empty %}
-                    <option>No stores available.</option>
-                {% endfor %}
-            </select>
-            <button type="submit">View Inventory</button>
-        </form>
+{% block title %}
+    Store Inventory
+{% endblock %}
 
-        {% if selected_store %}
+{% block content %}
+    <h2>Select a Store</h2>
+    <form method="get" action="{% url 'inventory:store' %}">
+        <label for="store"></label>
+        <select name="stores" id="store">
+            {% for store in stores %}
+                <option value="{{ storeID }}" {% if store == selected_store %}selected{% endif %}>{{ store.name }}</option>
+            {% empty %}
+                <option>No stores available.</option>
+            {% endfor %}
+        </select>
+        <button type="submit">View Inventory</button>
+    </form>
+
+    {% if selected_store %}
         <h3>Inventory for {{ selected_store.name }}:</h3>
         <ul>
             {% for item in inventory_items %}
@@ -43,10 +27,7 @@
                 <li>No inventory items available for this store.</li>
             {% endfor %}
         </ul>
-        {% else %}
-            <p>Please select a store to view the inventory.</p>
-        {% endif %}
-        {% endblock %}
-    </main>
-</body>
-</html>
+    {% else %}
+        <p>Please select a store to view the inventory.</p>
+    {% endif %}
+{% endblock %}

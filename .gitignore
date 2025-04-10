@@ -1,7 +1,78 @@
-inventory_project/inventory_project/.env
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__
 
-# Ignore SQLite database
-inventory_project/db.sqlite3
+# Virtual environment directory
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Ignore compiled Python bytecode files
-inventory_project/inventory_project/__pycache__/
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.db
+*.sqlite3
+db.sqlite3-journal
+
+# Media and static files
+/static/
+media/
+
+# Backup files
+*.bak
+*.swp
+
+# IDEs and editors (ignore configuration files from editors like VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python-specific configuration
+*.egg-info/
+*.dist-info/
+*.eggs/
+dist/
+build/
+
+# Django secret key (not to be tracked)
+*.env
+
+# SQLite database file (if using SQLite)
+*.sqlite3
+
+# Coverage reports
+.coverage
+coverage.xml
+*.cover
+
+# Pytest cache
+.cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Django migrations (optional, but generally should be versioned)
+# However, for development environments, you can sometimes choose not to version migrations,
+# but it's usually a good idea to track them for collaboration.
+# migrations folder (optional - do not ignore migrations if it's a team project)
+# /your_app/migrations/
+
+# Docker files
+*.dockerfile
+docker-compose.yml
+Dockerfile
+.docker/
+
+# Example environment files
+.env
+*.env
+
+# Files created by the Django test server
+*.log
+*.pid

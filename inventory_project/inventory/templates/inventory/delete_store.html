@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Delete Store
+{% endblock %}
+
+{% block content %}
+<div class="inventory-container">
+    <h2>Are you sure you want to delete the store "{{ store.name }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="form-delete-btn">Yes, Delete</button>
+    </form>
+    <a href="{% url 'inventory:create_store' %}" class="nav-btn">Cancel</a>
+</div>
+{% endblock %}

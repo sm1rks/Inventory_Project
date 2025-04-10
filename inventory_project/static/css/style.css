@@ -60,6 +60,7 @@ a:hover {
     color: white;
 }
 
+
 .form-submit {
     padding: 0.6rem;
     border-radius: 8px;
@@ -72,6 +73,16 @@ a:hover {
 .form-submit:hover {
     background-color: green;
 }
+
+.form-delete-btn{
+    padding: 0.6rem;
+    border-radius: 8px;
+    background-color: red;
+    color: white;
+    border: white;
+    cursor: pointer;
+}
+
 
 /* Error list styles */
 .errorlist {
@@ -270,21 +281,31 @@ nav {
 .inventory-list li a {
     margin-left: 1rem;
     font-size: 0.85rem; /* Reduced font size */
-    color: #90caf9;
     text-decoration: none;
     flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
-.inventory-list li a:hover {
-    color: #bbdefb;
+.edit-btn {
+    color: #4caf50; /* Green color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.inventory-list li a.edit-btn {
-    color: #4caf50;
+.edit-btn:hover {
+    color: #388e3c; /* Darker green on hover */
 }
 
-.inventory-list li a.delete-btn {
-    color: #f44336;
+/* Red Delete Button */
+.delete-btn {
+    color: #f44336; /* Red color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: #d32f2f; /* Darker red on hover */
 }
 
 .inventory-header {
@@ -294,12 +315,11 @@ nav {
     margin-bottom: 1.5rem;
 }
 
+.inventory-header button,
 .inventory-header select {
-    max-width: 200px;
+    max-width: 100%;
+    width: 100%;
     font-size: 0.9rem; /* Reduced font size */
-}
-
-.inventory-header button {
     padding: 0.5rem 1rem;
     font-size: 0.9rem; /* Reduced font size */
     background-color: #4caf50;
@@ -312,4 +332,184 @@ nav {
 
 .inventory-header button:hover {
     background-color: #388e3c;
+}
+
+/* Shipments App Styles */
+.shipments-container form select{
+    max-width: 100%;
+    width:100%;
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.shipments-container form button {
+    max-width: 100%; /* Ensure the input/select fits within the container */
+    width: 100%; /* Make it responsive */
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #4caf50;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.shipment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    text-align: left;
+    color: white;
+}
+
+.shipment-table th,
+.shipment-table td {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+}
+
+.shipment-table th {
+    background-color: #444;
+    color: #90caf9;
+    text-transform: uppercase;
+}
+
+.shipment-table tr:nth-child(even) {
+    background-color: #333;
+}
+
+.shipment-table tr:hover {
+    background-color: #555;
+}
+
+/* Restrict the Actions column to fit the buttons */
+.shipment-table th:last-child,
+.shipment-table td:last-child {
+    white-space: nowrap; /* Prevent wrapping */
+    text-align: center; /* Center-align the buttons */
+    width: 0%; /* Shrink to fit content */
+}
+
+/* Add spacing between Edit and Delete buttons */
+
+.shipment-table .delete-btn {
+    margin-left: 0.5rem;
+}
+
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    color: white;
+}
+
+.dashboard-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #90caf9;
+}
+
+/* Dashboard Table Styles */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1rem;
+    text-align: left;
+    color: white;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+}
+
+.dashboard-table th {
+    background-color: #444;
+    color: #90caf9;
+    text-transform: uppercase;
+}
+
+.dashboard-table tr:nth-child(even) {
+    background-color: #333;
+}
+
+.dashboard-table tr:hover {
+    background-color: #555;
+}
+
+.dashboard-table td {
+    vertical-align: top;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.dashboard-table ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-table ul li {
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Store Table Styles */
+.store-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1rem;
+    text-align: left;
+    color: white;
+}
+
+.store-table th,
+.store-table td {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+}
+
+.store-table th {
+    background-color: #444;
+    color: #90caf9;
+    text-transform: uppercase;
+}
+
+.store-table tr:nth-child(even) {
+    background-color: #333;
+}
+
+.store-table tr:hover {
+    background-color: #555;
+}
+
+.store-table td {
+    vertical-align: top;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.store-table th:first-child,
+.store-table td:first-child {
+    width: 100%; /* Allow the column to expand */
+    text-align: left; /* Align text to the left */
+}
+
+/* Restrict the Actions column to fit the buttons */
+.store-table th:last-child,
+.store-table td:last-child {
+    white-space: nowrap; /* Prevent wrapping */
+    text-align: center; /* Center-align the buttons */
+    width: 0%; /* Shrink to fit content */
+}
+
+.store-table .edit-btn,
+.store-table .delete-btn {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem; /* Add spacing between buttons */
+    display: inline-block; /* Ensure buttons are inline */
 }

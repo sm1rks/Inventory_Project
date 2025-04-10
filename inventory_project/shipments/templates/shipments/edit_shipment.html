@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Edit Shipment
+{% endblock %}
+
+{% block content %}
+<div class="inventory-container">
+    <h2>Edit Shipment</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="{% url 'shipments:store_shipments' %}?store={{ shipment.store.storeID }}" class="nav-btn">Cancel</a>
+</div>
+{% endblock %}

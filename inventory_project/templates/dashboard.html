@@ -1,10 +1,49 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    Home
+    Dashboard Overview
 {% endblock %}
 
 {% block content %}
-    <h1>Welcome to the Dashboard</h1>
-    
+<div class="dashboard-container">
+    <h1>Dashboard Overview</h1>
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>Store Name</th>
+                <th>Inventory Summary</th>
+                <th>Shipments Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in store_data %}
+            <tr>
+                <td>{{ data.store.name }}</td>
+                <td>
+                    {% if data.inventory %}
+                        <ul>
+                            {% for item in data.inventory %}
+                                <li>{{ item.itemName }} (Qty: {{ item.quantity }})</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        No inventory available.
+                    {% endif %}
+                </td>
+                <td>
+                    {% if data.shipments %}
+                        <ul>
+                            {% for shipment in data.shipments %}
+                                <li>{{ shipment.item.itemName }} ({{ shipment.status }})</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        No shipments available.
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

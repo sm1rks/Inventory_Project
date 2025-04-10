@@ -9,3 +9,6 @@ Our Inventory Project for CIS4004
 1. Run migrations with python manage.py migrate
 1. Run the server with python manage.py runserver
 1. Open the server at http://localhost:8000/, 127.0.0.1 will not work due to API token requirements.
+
+## AI
+We used a variety of AI models, ChatGPT, Deepseek, and Github Copilot. Generally every file that we touched in the project was affected in one way or another, because our main two types of prompts were either asking how to do something or pasting an error and asking how to fix it. There were other miscellaneous prompts like organizing files or getting help with CSS.

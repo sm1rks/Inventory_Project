@@ -17,4 +17,4 @@ class Inventory(models.Model):
     lastUpdated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Store: {self.store} - itemName: {self.itemName} - itemID: {self.itemID} - quantity: {self.quantity} - lastUpdated: {self.lastUpdated}" 
+        return f"{self.itemName} (Qty: {self.quantity})"

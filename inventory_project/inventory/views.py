@@ -51,3 +51,28 @@ def delete_inventory_item(request, item_id):
         # Redirect to the same store's inventory
         return redirect(f"{reverse('inventory:store')}?stores={store_id}")
     return render(request, 'inventory/delete_item.html', {'inventory_item': inventory_item})
+
+from .forms import StoreForm
+
+@google_login_required(login_url='/login/')
+def edit_store(request, store_id=None):
+    store = get_object_or_404(Store, pk=store_id) if store_id else None
+    stores = Store.objects.all()  # Fetch all stores for display
+
+    if request.method == 'POST':
+        form = StoreForm(request.POST, instance=store)
+        if form.is_valid():
+            form.save()
+            return redirect('inventory:create_store')  # Redirect to the same page after saving
+    else:
+        form = StoreForm(instance=store)
+
+    return render(request, 'inventory/edit_store.html', {'form': form, 'store': store, 'stores': stores})
+
+@google_login_required(login_url='/login/')
+def delete_store(request, store_id):
+    store = get_object_or_404(Store, pk=store_id)
+    if request.method == 'POST':
+        store.delete()
+        return redirect('inventory:create_store')  # Redirect to the store management page after deletion
+    return render(request, 'inventory/delete_store.html', {'store': store})

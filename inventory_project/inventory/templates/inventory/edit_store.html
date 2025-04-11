@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="inventory-container">
-    <h2>{% if store %}Edt a Store{% else %}Create a New Store{% endif %}</h2>
+    <h2>{% if store %}Edit a Store{% else %}Create a New Store{% endif %}</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

@@ -6,10 +6,10 @@ Our Inventory Project for CIS4004
 1. Activate the venv with .venv\Scripts\activate
 1. Enter the directory with cd inventory_project
 1. Install requirements with pip install -r requirements.txt
-1. This project requires a OAuth Client ID, see below for how to create one.
+1. This project requires an OAuth Client ID; see below for how to create one.
 1. Run migrations with python manage.py migrate
 1. Run the server with python manage.py runserver
-1. Open the server at http://localhost:8000/, 127.0.0.1 will not work due to API token requirements.
+1. Open the server at http://localhost:8000/; 127.0.0.1 will not work due to API token requirements.
 
 ## API
 1. Visit the APIs & Services page at https://console.developers.google.com/apis

@@ -27,7 +27,7 @@ Our Inventory Project for CIS4004
 1. Paste the Client ID into the example.env found in inventory_project/inventory_project
 1. Rename example.env to .env
 
-The ID previously attached to this repo has been disabled.
+The ID previously attached to this repo has been disabled. If you're a grader for this project, you can message me @sm1rk on Discord for a working key as a last resort.
 
 ## AI
-We used a variety of AI models, ChatGPT, Deepseek, and Github Copilot. Generally every file that we touched in the project was affected in one way or another, because our main two types of prompts were either asking how to do something or pasting an error and asking how to fix it. There were other miscellaneous prompts like organizing files or getting help with CSS.
+We used a variety of AI models, including ChatGPT, Deepseek, and Github Copilot. Generally, every file that we touched in the project was affected in one way or another because our main two types of prompts were either asking how to do something or pasting an error and asking how to fix it. There were other miscellaneous prompts, like organizing files or getting help with CSS.

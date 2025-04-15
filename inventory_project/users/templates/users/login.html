@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 
+
 {% block title %}
     User login
 {% endblock %}
@@ -17,7 +18,7 @@
     </div>
     <div class="google-login">
       <div id="g_id_onload"
-          data-client_id="282633199150-c41bv8f7piu9sodcu6675mae18gqha67.apps.googleusercontent.com"
+          data-client_id="{{ google_client_id }}"
           data-context="signin"
           data-ux_mode="popup"
           data-login_uri="http://localhost:8000/login/auth-receiver"
